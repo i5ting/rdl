@@ -1,6 +1,6 @@
 {
   "name": "rdl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "rdl = read-dir-list",
   "main": "index.js",
   "scripts": {
