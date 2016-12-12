@@ -1,10 +1,13 @@
 var path = require('path');
-var readDir = require('./')
+var rdl = require('./')
 
-readDir(path.join(__dirname, './dept'), function (_list) {
-    console.log(_list);
-    
-    readDir(path.join(__dirname, './dept'), function (_list) {
-        console.log(_list);
-    });
-});
+var dir = path.join(__dirname, './dept')
+
+rdl(dir).then(function(r){
+  console.log(r)
+  return rdl(dir)
+})
+.then(function(r2){
+  console.log(r2)
+})
+

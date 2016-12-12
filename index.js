@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require('fs')
 var path = require('path')
 
@@ -30,10 +32,15 @@ var rdl = function (dir, cb) {
   })
 }
 
-module.exports = function(dir, cb) {
+module.exports = function(dir) {
   if (count === 0){
     list = []
   }
-    
-  rdl(dir, cb)
+  
+  return new Promise(function(resolve, reject){  
+    rdl(dir, function(resultArray) {
+      // console.log(resultArray)
+      resolve(resultArray)
+    })
+  })
 }
